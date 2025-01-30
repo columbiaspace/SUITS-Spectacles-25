@@ -29,14 +29,12 @@
     nextButton: false
     prevButton: false
     statusText: false
-    tssData: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
     - nextButton: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
       prevButton: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
       statusText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      tssData: !<MappingBased.TSS_Data> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -44,4 +42,3 @@
     - // @input Interactable nextButton
     - // @input Interactable prevButton
     - // @input Component.Text statusText
-    - // @input TSS_Data tssData

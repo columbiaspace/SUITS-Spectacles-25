@@ -1,16 +1,108 @@
 import { Interactable } from "SpectaclesInteractionKit/Components/Interaction/Interactable/Interactable";
 import { validate } from "../SpectaclesInteractionKit/Utils/validate";
-import { TSSData } from './TSS_Data';
+import { UIAData, TelemetryData, SpecData, RoverData, IMUData, DCUData, COMMData } from './TSS_Data';
 
 @component
 export class IngressSimulator extends BaseScriptComponent {
     @input nextButton!: Interactable;
     @input prevButton!: Interactable;
     @input statusText!: Text;
-    @input tssData!: TSSData;  // This should be the same TSSData instance that Ingress.ts uses
 
-    private currentStep: number = 1;
-    private currentSubStep: number = 1;
+    // Internal TSS data state
+    public uiaData: UIAData = {
+        uia: {
+            eva1_power: false,
+            eva1_oxy: false,
+            eva1_water_supply: false,
+            eva1_water_waste: false,
+            eva2_power: false,
+            eva2_oxy: false,
+            eva2_water_supply: false,
+            eva2_water_waste: false,
+            oxy_vent: false,
+            depress: false
+        }
+    };
+
+    public dcuData: DCUData = {
+        dcu: {
+            eva1: {
+                batt: false,
+                oxy: false,
+                comm: false,
+                fan: false,
+                pump: false,
+                co2: false
+            },
+            eva2: {
+                batt: false,
+                oxy: false,
+                comm: false,
+                fan: false,
+                pump: false,
+                co2: false
+            }
+        }
+    };
+
+    public telemetryData: TelemetryData = {
+        telemetry: {
+            eva_time: 0,
+            eva1: {
+                batt_time_left: 100,
+                oxy_pri_storage: 100,
+                oxy_sec_storage: 100,
+                oxy_pri_pressure: 100,
+                oxy_sec_pressure: 100,
+                oxy_time_left: 100,
+                heart_rate: 80,
+                oxy_consumption: 1,
+                co2_production: 1,
+                suit_pressure_oxy: 100,
+                suit_pressure_co2: 0,
+                suit_pressure_other: 0,
+                suit_pressure_total: 100,
+                fan_pri_rpm: 1000,
+                fan_sec_rpm: 0,
+                helmet_pressure_co2: 0,
+                scrubber_a_co2_storage: 0,
+                scrubber_b_co2_storage: 0,
+                temperature: 70,
+                coolant_ml: 100,
+                coolant_gas_pressure: 100,
+                coolant_liquid_pressure: 100
+            },
+            eva2: {
+                batt_time_left: 100,
+                oxy_pri_storage: 100,
+                oxy_sec_storage: 100,
+                oxy_pri_pressure: 100,
+                oxy_sec_pressure: 100,
+                oxy_time_left: 100,
+                heart_rate: 80,
+                oxy_consumption: 1,
+                co2_production: 1,
+                suit_pressure_oxy: 100,
+                suit_pressure_co2: 0,
+                suit_pressure_other: 0,
+                suit_pressure_total: 100,
+                fan_pri_rpm: 1000,
+                fan_sec_rpm: 0,
+                helmet_pressure_co2: 0,
+                scrubber_a_co2_storage: 0,
+                scrubber_b_co2_storage: 0,
+                temperature: 70,
+                coolant_ml: 100,
+                coolant_gas_pressure: 100,
+                coolant_liquid_pressure: 100
+            }
+        }
+    };
+
+    public duringEVA: boolean = false;
+
+    public currentStep: number = 1;
+    public currentSubStep: number = 1;
     private readonly steps: { [key: number]: { [key: number]: string } } = {
         1: {
             1: "Step 1.1: Connect EV-1 UIA and DCU umbilical",
@@ -38,7 +130,6 @@ export class IngressSimulator extends BaseScriptComponent {
         validate(this.nextButton);
         validate(this.prevButton);
         validate(this.statusText);
-        validate(this.tssData);
 
         print("[IngressSimulator] Starting initialization");
         // Initialize the simulated TSS data
@@ -55,8 +146,11 @@ export class IngressSimulator extends BaseScriptComponent {
     }
 
     private initializeTSSData(): void {
-        // Create initial TSS data state
-        const initialUIAData = {
+        // Initialize the TSS data that will be shared with Ingress.ts
+        print("[IngressSimulator] Initializing all TSS data");
+        
+        // No need to create temporary objects - directly set the properly structured data
+        this.uiaData = {
             uia: {
                 eva1_power: false,
                 eva1_oxy: false,
@@ -71,10 +165,10 @@ export class IngressSimulator extends BaseScriptComponent {
             }
         };
 
-        const initialDCUData = {
+        this.dcuData = {
             dcu: {
                 eva1: {
-                    batt: false,  // Start on local battery
+                    batt: false,
                     oxy: false,
                     comm: false,
                     fan: false,
@@ -92,28 +186,60 @@ export class IngressSimulator extends BaseScriptComponent {
             }
         };
 
-        const initialTelemetryData = {
+        this.telemetryData = {
             telemetry: {
+                eva_time: 0,
                 eva1: {
-                    oxy_pri_storage: 100,  // Start with full tanks
-                    oxy_sec_storage: 100,
-                    coolant_ml: 100  // Start with full coolant
-                },
-                eva2: {
+                    batt_time_left: 100,
                     oxy_pri_storage: 100,
                     oxy_sec_storage: 100,
-                    coolant_ml: 100
+                    oxy_pri_pressure: 100,
+                    oxy_sec_pressure: 100,
+                    oxy_time_left: 100,
+                    heart_rate: 80,
+                    oxy_consumption: 1,
+                    co2_production: 1,
+                    suit_pressure_oxy: 100,
+                    suit_pressure_co2: 0,
+                    suit_pressure_other: 0,
+                    suit_pressure_total: 100,
+                    fan_pri_rpm: 1000,
+                    fan_sec_rpm: 0,
+                    helmet_pressure_co2: 0,
+                    scrubber_a_co2_storage: 0,
+                    scrubber_b_co2_storage: 0,
+                    temperature: 70,
+                    coolant_ml: 100,
+                    coolant_gas_pressure: 100,
+                    coolant_liquid_pressure: 100
+                },
+                eva2: {
+                    batt_time_left: 100,
+                    oxy_pri_storage: 100,
+                    oxy_sec_storage: 100,
+                    oxy_pri_pressure: 100,
+                    oxy_sec_pressure: 100,
+                    oxy_time_left: 100,
+                    heart_rate: 80,
+                    oxy_consumption: 1,
+                    co2_production: 1,
+                    suit_pressure_oxy: 100,
+                    suit_pressure_co2: 0,
+                    suit_pressure_other: 0,
+                    suit_pressure_total: 100,
+                    fan_pri_rpm: 1000,
+                    fan_sec_rpm: 0,
+                    helmet_pressure_co2: 0,
+                    scrubber_a_co2_storage: 0,
+                    scrubber_b_co2_storage: 0,
+                    temperature: 70,
+                    coolant_ml: 100,
+                    coolant_gas_pressure: 100,
+                    coolant_liquid_pressure: 100
                 }
             }
         };
 
-        // Initialize the TSS data that will be shared with Ingress.ts
-        print("[IngressSimulator] Initializing UIA data");
-        this.tssData.onUIAUpdate(JSON.stringify(initialUIAData));
-        print("[IngressSimulator] Initializing DCU data");
-        this.tssData.onDCUUpdate(JSON.stringify(initialDCUData));
-        print("[IngressSimulator] Initializing Telemetry data");
-        this.tssData.onTELEMETRYUpdate(JSON.stringify(initialTelemetryData));
         print("[IngressSimulator] TSS data initialized");
     }
 
@@ -172,82 +298,67 @@ export class IngressSimulator extends BaseScriptComponent {
 
     private simulateStepCompletion(): void {
         // Get current state
-        if (!this.tssData || !this.tssData.uia || !this.tssData.dcu || !this.tssData.telemetry) {
+        if (!this.uiaData?.uia || !this.dcuData?.dcu || !this.telemetryData?.telemetry) {
             print("[IngressSimulator] ERROR: TSS data or its components are undefined!");
             return;
         }
 
-        const currentUIAState = this.tssData.uia.uia;
-        const currentDCUState = this.tssData.dcu.dcu;
-        const currentTelemetryState = this.tssData.telemetry.telemetry;
-
-        if (!currentUIAState || !currentDCUState || !currentTelemetryState) {
-            print("[IngressSimulator] ERROR: One or more states are undefined!");
-            return;
-        }
-
         print(`[IngressSimulator] Current states before update:
-            UIA: eva1_power=${currentUIAState.eva1_power}, oxy_vent=${currentUIAState.oxy_vent}, eva1_water_waste=${currentUIAState.eva1_water_waste}
-            DCU: batt=${currentDCUState.eva1.batt}, pump=${currentDCUState.eva1.pump}
-            Telemetry: oxy_pri=${currentTelemetryState.eva1.oxy_pri_storage}, coolant=${currentTelemetryState.eva1.coolant_ml}`);
+            UIA: eva1_power=${this.uiaData.uia.eva1_power}, oxy_vent=${this.uiaData.uia.oxy_vent}, eva1_water_waste=${this.uiaData.uia.eva1_water_waste}
+            DCU: batt=${this.dcuData.dcu.eva1.batt}, pump=${this.dcuData.dcu.eva1.pump}
+            Telemetry: oxy_pri=${this.telemetryData.telemetry.eva1.oxy_pri_storage}, coolant=${this.telemetryData.telemetry.eva1.coolant_ml}`);
 
         // Update states based on current step
         switch (this.currentStep) {
             case 1:
                 if (this.currentSubStep === 1) {
-                    currentUIAState.eva1_power = true;
-                    currentDCUState.eva1.batt = true;  // Set to umbilical
+                    this.uiaData.uia.eva1_power = true;
+                    this.dcuData.dcu.eva1.batt = true;  // Set to umbilical
                     print("[IngressSimulator] Step 1.1: Setting eva1_power and batt to true");
                 }
                 break;
 
             case 2:
                 if (this.currentSubStep === 1) {
-                    currentUIAState.oxy_vent = true;
+                    this.uiaData.uia.oxy_vent = true;
                     print("[IngressSimulator] Step 2.1: Setting oxy_vent to true");
                 } else if (this.currentSubStep === 2) {
                     // Simulate tanks draining
-                    currentTelemetryState.eva1.oxy_pri_storage = 5;
-                    currentTelemetryState.eva1.oxy_sec_storage = 5;
+                    this.telemetryData.telemetry.eva1.oxy_pri_storage = 5;
+                    this.telemetryData.telemetry.eva1.oxy_sec_storage = 5;
                     print("[IngressSimulator] Step 2.2: Setting oxygen levels to 5");
                 } else if (this.currentSubStep === 3) {
-                    currentUIAState.oxy_vent = false;
+                    this.uiaData.uia.oxy_vent = false;
                     print("[IngressSimulator] Step 2.3: Setting oxy_vent to false");
                 }
                 break;
 
             case 3:
                 if (this.currentSubStep === 1) {
-                    currentDCUState.eva1.pump = true;
+                    this.dcuData.dcu.eva1.pump = true;
                     print("[IngressSimulator] Step 3.1: Setting pump to true");
                 } else if (this.currentSubStep === 2) {
-                    currentUIAState.eva1_water_waste = true;
+                    this.uiaData.uia.eva1_water_waste = true;
                     print("[IngressSimulator] Step 3.2: Setting eva1_water_waste to true");
                 } else if (this.currentSubStep === 3) {
                     // Simulate coolant draining
-                    currentTelemetryState.eva1.coolant_ml = 2;
+                    this.telemetryData.telemetry.eva1.coolant_ml = 2;
                     print("[IngressSimulator] Step 3.3: Setting coolant to 2ml");
                 } else if (this.currentSubStep === 4) {
-                    currentUIAState.eva1_water_waste = false;
+                    this.uiaData.uia.eva1_water_waste = false;
                     print("[IngressSimulator] Step 3.4: Setting eva1_water_waste to false");
                 }
                 break;
 
             case 4:
                 if (this.currentSubStep === 1) {
-                    currentUIAState.eva1_power = false;
+                    this.uiaData.uia.eva1_power = false;
                     print("[IngressSimulator] Step 4.1: Setting eva1_power to false");
                 } else if (this.currentSubStep === 2) {
-                    currentDCUState.eva1.batt = false;  // Set back to local battery
+                    this.dcuData.dcu.eva1.batt = false;  // Set back to local battery
                     print("[IngressSimulator] Step 4.2: Setting batt to false (local)");
                 }
                 break;
         }
-
-        // Update TSS data with new states
-        print("[IngressSimulator] Updating all TSS states");
-        this.tssData.onUIAUpdate(JSON.stringify({ uia: currentUIAState }));
-        this.tssData.onDCUUpdate(JSON.stringify({ dcu: currentDCUState }));
-        this.tssData.onTELEMETRYUpdate(JSON.stringify({ telemetry: currentTelemetryState }));
     }
 } 

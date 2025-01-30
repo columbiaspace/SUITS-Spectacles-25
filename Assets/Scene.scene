@@ -15054,7 +15054,6 @@
       nextButton: !<MappingBased.Interactable> ccbdfcef-c412-432e-8443-968705aed701
       prevButton: !<MappingBased.Interactable> 7e2749f7-1fa5-4a94-94ba-799e6a4e9851
       statusText: !<reference.Text> 124669bb-299e-4704-926f-408759e45e37
-      tssData: !<MappingBased.TSS_Data> d00b3986-b1e0-4948-92b4-b69f73f31d2a
   ScriptTypes:
     "":
       {}
