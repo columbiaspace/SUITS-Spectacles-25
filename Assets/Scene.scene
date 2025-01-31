@@ -18115,6 +18115,21 @@
     - !<own> 8dbfcb2b-c189-46eb-960f-45c157d8484a
   Components:
     []
+- !<SceneObject/635d564f-11b3-4db3-8a7c-5db49210d526>
+  PrefabRemaps:
+    []
+  Name: Object 1
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 3.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 648309c7-971c-42fc-b4a9-529271460357
 - !<ScreenTransform/638efe86-613f-4735-a142-375f9fb83afe>
   PrefabRemaps:
     []
@@ -18226,6 +18241,52 @@
     - !<own> 8e8470af-1ad4-4317-96d6-2bd90d653cbb
   Components:
     []
+- !<ScriptComponent/648309c7-971c-42fc-b4a9-529271460357>
+  PrefabRemaps:
+    []
+  Name: Map
+  Enabled: true
+  ScriptAsset: !<reference> 659a44d1-654b-441b-85d0-d826e3c6c2ab
+  ScriptInputsDefault:
+    componentPrefab: true
+    maskTexture: true
+    mapOutlineTexture: true
+    showUserPin: true
+    userPinVisual: true
+    userPinScale: true
+    userPinRotated: true
+    mapPinPrefab: true
+    mapPinsRotated: true
+    rotation: true
+    mapRotated: true
+    mapRotationSmoothing: true
+    mapUpdateThreshold: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      componentPrefab: !<reference.ObjectPrefab> 28051d46-9be9-4234-933b-cb90bad04876
+      maskTexture: !<reference.Texture> 6d3da423-7069-4531-845f-2a465c9f9300
+      useOutlineTexture: false
+      mapOutlineTexture: !<reference.Texture> 6844e925-e163-4fa6-a5c9-bd30699a82a6
+      mapZoomLevel: !<float> 13.000000
+      showUserPin: true
+      userPinVisual: !<reference.ObjectPrefab> 595354e2-495b-4054-acdc-1ee116fd1147
+      userPinScale: !<Vec2> {x: 1.000000, y: 1.000000}
+      userPinRotated: true
+      mapPinPrefab: !<reference.ObjectPrefab> fc18f04a-99f6-4608-a33f-a6ce4936aec6
+      mapPinsRotated: true
+      enableScrolling: true
+      setMapToCustomLocation: true
+      longitude: !<string> 29.56504932687968
+      latitude: !<string> -95.08095427833419
+      rotation: !<float> 0.000000
+      mapRotated: true
+      mapRotationSmoothing: true
+      mapUpdateThreshold: 0.100000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/65833bb8-54ce-423b-a863-d059e467bb42>
   PrefabRemaps:
     []
@@ -28407,6 +28468,7 @@
     - !<own> 35d35cdf-2784-48b0-854b-9e0b381af4cd
     - !<own> 78136785-6fb2-4c91-811b-ea51683aa88e
     - !<own> b270cb05-2369-45a8-82e2-05e27a6737da
+    - !<own> 635d564f-11b3-4db3-8a7c-5db49210d526
   Components:
     - !<own> 52c64ba1-207a-4e32-8ccc-cd6f1fa6a833
     - !<own> b007a0f5-d92f-4290-b4e0-754e967b28e1
