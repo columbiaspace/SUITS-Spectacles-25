@@ -4,9 +4,7 @@
     - !<own> 6580fa8f-1083-452c-b24b-65d7c6426868
 - !<PassInfo/6580fa8f-1083-452c-b24b-65d7c6426868>
   CachedProperties:
-    - overrideTimeDelta:
-        typeIdx: 1
-        value: 0.000000
+    []
   DepthWrite: true
   DepthTest: true
   DepthFunction: LessEqual
@@ -102,6 +100,9 @@
     cornerRadius:
       typeIdx: 1
       value: 0.050000
+    overrideTimeDelta:
+      typeIdx: 1
+      value: 0.000000
     overrideTimeElapsed:
       typeIdx: 1
       value: 0.000000

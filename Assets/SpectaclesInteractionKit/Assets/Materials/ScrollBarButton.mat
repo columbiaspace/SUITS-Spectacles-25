@@ -7,15 +7,6 @@
     - mainColor:
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    - overrideTimeDelta:
-        typeIdx: 1
-        value: 0.000000
-    - overrideTimeElapsed:
-        typeIdx: 1
-        value: 0.000000
-    - overrideTimeEnabled:
-        typeIdx: 0
-        value: 0
   DepthWrite: true
   DepthTest: true
   DepthFunction: LessEqual
@@ -69,6 +60,15 @@
     colorMultiplier:
       typeIdx: 1
       value: 1.000000
+    overrideTimeDelta:
+      typeIdx: 1
+      value: 0.000000
+    overrideTimeElapsed:
+      typeIdx: 1
+      value: 0.000000
+    overrideTimeEnabled:
+      typeIdx: 0
+      value: 0
   Pass: !<reference> 00f14031-5da3-41ae-9b33-273f1600bbfc
   RTCaster: false
   RTReceiver: false
