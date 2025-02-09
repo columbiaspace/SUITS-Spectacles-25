@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/4891807a-c1cb-4ba7-9da0-c47dd3e15ef7>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> fa34857d-d5d2-48fd-bfb3-76b5aaf557a2
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> fa34857d-d5d2-48fd-bfb3-76b5aaf557a2
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 7d194d13-d259-461f-9a77-064ac566f484
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/1031ea12-d898-4624-82d8-b4a221fa0247>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/7d194d13-d259-461f-9a77-064ac566f484>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    dropPinButton: false
+    map: false
+    procButton: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - dropPinButton: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
+      procButton: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
+      map: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Interactable dropPinButton
+    - // @input Interactable procButton
+    - // @input SceneObject map
