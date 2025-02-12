@@ -296,9 +296,9 @@
     top: 1.000000
   Offset:
     left: -225.000000
-    bottom: -945.000000
+    bottom: -450.000000
     right: 225.000000
-    top: -495.000000
+    top: 0.000000
 - !<SceneObject/02428a5f-df07-471f-9dae-b6a2d542a5ef>
   PrefabRemaps:
     []
@@ -32416,7 +32416,7 @@
 - !<SceneObject/c9c2a414-35a2-4d70-81d4-b3b33967a199>
   PrefabRemaps:
     []
-  Name: Object
+  Name: NavMap
   Enabled: true
   Layers: 1
   LocalTransform:
