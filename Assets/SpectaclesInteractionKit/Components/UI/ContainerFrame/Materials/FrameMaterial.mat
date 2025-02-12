@@ -4,7 +4,21 @@
     - !<own> ead50f94-a77b-4983-bf19-9a0e5aa3b6cb
 - !<PassInfo/ead50f94-a77b-4983-bf19-9a0e5aa3b6cb>
   CachedProperties:
-    []
+    - matcapTextureBorderColor:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - matcapTextureDims:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - matcapTextureTransform:
+        typeIdx: 7
+        value:
+          0: {x: 1.000000, y: 0.000000, z: 0.000000}
+          1: {x: 0.000000, y: 1.000000, z: 0.000000}
+          2: {x: 0.000000, y: 0.000000, z: 1.000000}
+    - matcapTextureUvMinMax:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   DepthWrite: true
   DepthTest: true
   DepthFunction: LessEqual
@@ -244,21 +258,6 @@
           borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
           mipmaps: false
         type: Texture2D
-    matcapTextureBorderColor:
-      typeIdx: 5
-      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    matcapTextureDims:
-      typeIdx: 5
-      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    matcapTextureTransform:
-      typeIdx: 7
-      value:
-        0: {x: 1.000000, y: 0.000000, z: 0.000000}
-        1: {x: 0.000000, y: 1.000000, z: 0.000000}
-        2: {x: 0.000000, y: 0.000000, z: 1.000000}
-    matcapTextureUvMinMax:
-      typeIdx: 5
-      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     opacity:
       typeIdx: 1
       value: 1.000000
