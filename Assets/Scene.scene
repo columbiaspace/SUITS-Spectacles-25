@@ -271,34 +271,34 @@
     []
   Name: Screen Transform
   Enabled: true
-  IsAdvanced: true
+  IsAdvanced: false
   Constraints:
     pinToLeft: false
-    pinToTop: false
+    pinToTop: true
     pinToRight: false
     pinToBottom: false
-    fixedWidth: false
-    fixedHeight: false
+    fixedWidth: true
+    fixedHeight: true
     deactivatedFixedSprite: false
     deactivatedFixedPivot: false
-  Pivot: {x: 0.000000, y: 1.000000}
+  Pivot: {x: 0.000000, y: 0.000000}
   Transform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
     rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 0.500000, y: 0.500000, z: 0.500000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   RawMode: true
-  ForceBasic: false
+  ForceBasic: true
   Anchor:
     left: 0.000000
     bottom: 1.000000
     right: 0.000000
     top: 1.000000
   Offset:
-    left: -405.000000
-    bottom: -1440.000000
-    right: 405.000000
-    top: 0.000000
+    left: -225.000000
+    bottom: -945.000000
+    right: 225.000000
+    top: -495.000000
 - !<SceneObject/02428a5f-df07-471f-9dae-b6a2d542a5ef>
   PrefabRemaps:
     []
@@ -32422,7 +32422,7 @@
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
     rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 0.500000, y: 0.500000, z: 0.500000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
     []
