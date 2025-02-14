@@ -25402,7 +25402,7 @@
     "":
       previewImage: !<reference.Image> 7b22e44d-6aae-4e9f-afd6-09f06e6c7edc
       capturedImage: !<reference.Image> 1d989a53-f80c-4a8e-b209-64e5ef93615c
-      captureButton: !<MappingBased.Interactable> 4a2d78eb-8162-4e28-a172-e175189d6947
+      captureButton: !<MappingBased.Interactable> 19723d7f-2791-4bef-ade4-77831462f0c1
   ScriptTypes:
     "":
       {}
