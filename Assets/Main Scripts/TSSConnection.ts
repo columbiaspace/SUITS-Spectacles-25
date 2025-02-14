@@ -32,7 +32,7 @@ export class TSSConnection extends BaseScriptComponent {
 
     private connectToTSS(): void {
         try {
-            const url = 'https://lunarlions.org:14141';
+            const url = 'https://127.0.0.1:14141';
             print("Attempting to connect to TSS at: " + url);
             
             this.socket = remoteServiceModule.createWebSocket(url);
