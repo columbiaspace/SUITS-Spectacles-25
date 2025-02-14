@@ -1,0 +1,41 @@
+- !<AssetImportMetadata/a1fe0810-7d8e-4d38-84ab-fca64b07c98d>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f7a7851f-9a09-4e9d-91df-936b434762af
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f7a7851f-9a09-4e9d-91df-936b434762af
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 8f367dbd-9d66-4b45-ab5b-427588c9d5b0
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/4da6bb3a-e52a-470a-b6fa-161e4bfca847>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/8f367dbd-9d66-4b45-ab5b-427588c9d5b0>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    statusText: false
+    tssData: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - statusText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      tssData: !<MappingBased.TSS_Data> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Component.Text statusText
+    - // @input TSS_Data tssData

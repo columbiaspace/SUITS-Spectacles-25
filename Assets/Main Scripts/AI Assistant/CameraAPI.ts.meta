@@ -26,13 +26,19 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    uiImage: false
+    captureButton: false
+    capturedImage: false
+    previewImage: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - uiImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+    - previewImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      capturedImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      captureButton: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - '// @input Component.Image uiImage {"hint":"The image in the scene that will be showing the captured frame."}'
+    - '// @input Component.Image previewImage {"hint":"The image that shows the live camera preview"}'
+    - '// @input Component.Image capturedImage {"hint":"The image that will display the captured photo"}'
+    - '// @input Interactable captureButton {"hint":"Button to trigger photo capture"}'
