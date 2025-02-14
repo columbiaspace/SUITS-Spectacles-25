@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/0e262ec5-be31-4e62-94ec-68524f740794>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f37f2420-27de-474b-9c17-65bd9a510394
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f37f2420-27de-474b-9c17-65bd9a510394
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 003823d8-916f-44bb-847d-52ad970eeb28
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/c0b456ad-4127-471f-a575-1628579f2da8>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/003823d8-916f-44bb-847d-52ad970eeb28>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    captureButton: false
+    capturedImage: false
+    previewImage: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - previewImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      capturedImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      captureButton: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input Component.Image previewImage {"hint":"The image that shows the live camera preview"}'
+    - '// @input Component.Image capturedImage {"hint":"The image that will display the captured photo"}'
+    - '// @input Interactable captureButton {"hint":"Button to trigger photo capture"}'
