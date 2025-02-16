@@ -32,11 +32,13 @@
     mainMenuButton3: false
     mainMenuButton4: false
     mainMenuButton5: false
+    mainMenuButton6: false
     menu1: false
     menu2: false
     menu3: false
     menu4: false
     menu5: false
+    menu6: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
@@ -51,6 +53,8 @@
       mainMenuButton5: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
       menu5: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingressManager: !<MappingBased.Ingress> 00000000-0000-0000-0000-000000000000
+      mainMenuButton6: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
+      menu6: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -60,9 +64,11 @@
     - // @input Interactable mainMenuButton3
     - // @input Interactable mainMenuButton4
     - // @input Interactable mainMenuButton5
+    - // @input Interactable mainMenuButton6
     - // @input SceneObject menu1
     - // @input SceneObject menu2
     - // @input SceneObject menu3
     - // @input SceneObject menu4
     - // @input SceneObject menu5
+    - // @input SceneObject menu6
     - // @input Ingress ingressManager

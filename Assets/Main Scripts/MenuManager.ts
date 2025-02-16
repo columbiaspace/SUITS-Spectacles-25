@@ -14,6 +14,7 @@ export class MenuManager extends BaseScriptComponent {
     @input mainMenuButton3!: Interactable;
     @input mainMenuButton4!: Interactable;
     @input mainMenuButton5!: Interactable;
+    @input mainMenuButton6!: Interactable;
 
     // Menu objects to toggle
     @input menu1!: SceneObject;
@@ -21,6 +22,7 @@ export class MenuManager extends BaseScriptComponent {
     @input menu3!: SceneObject;
     @input menu4!: SceneObject;
     @input menu5!: SceneObject;
+    @input menu6!: SceneObject;
 
     @input ingressManager!: Ingress;
 
@@ -30,10 +32,14 @@ export class MenuManager extends BaseScriptComponent {
         validate(this.mainMenuButton2);
         validate(this.mainMenuButton3);
         validate(this.mainMenuButton4);
+        validate(this.mainMenuButton5);
+        validate(this.mainMenuButton6);
         validate(this.menu1);
         validate(this.menu2);
         validate(this.menu3);
         validate(this.menu4);
+        validate(this.menu5);
+        validate(this.menu6);
 
         // Initially hide secondary menus
         this.menu1.enabled = false;
@@ -41,6 +47,7 @@ export class MenuManager extends BaseScriptComponent {
         this.menu3.enabled = false;
         this.menu4.enabled = false;
         this.menu5.enabled = false;
+        this.menu6.enabled = false;
 
         // Bind button click events
         this.mainMenuButton1.onTriggerEnd.add(() => this.toggleMenu1());
@@ -48,6 +55,7 @@ export class MenuManager extends BaseScriptComponent {
         this.mainMenuButton3.onTriggerEnd.add(() => this.toggleMenu3());
         this.mainMenuButton4.onTriggerEnd.add(() => this.toggleMenu4());
         this.mainMenuButton5.onTriggerEnd.add(() => this.toggleMenu5());
+        this.mainMenuButton6.onTriggerEnd.add(() => this.toggleMenu6());
     }
 
     private toggleMenu1(): void {
@@ -74,5 +82,8 @@ export class MenuManager extends BaseScriptComponent {
 
     private toggleMenu5(): void {
         this.menu5.enabled = !this.menu5.enabled;
+    }   
+    private toggleMenu6(): void {
+        this.menu6.enabled = !this.menu6.enabled;
     }   
 }
