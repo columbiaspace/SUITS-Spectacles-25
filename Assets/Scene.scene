@@ -24637,7 +24637,8 @@
   Enabled: true
   ScriptAsset: !<reference> ff86d6d8-bcd5-457a-8fd3-5ced03a22a41
   ScriptInputsDefault:
-    {}
+    mainMenuButton6: true
+    menu6: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -24647,13 +24648,13 @@
       mainMenuButton3: !<MappingBased.Interactable> bdbc28d6-672c-44c2-96b0-8681d82d6fcb
       mainMenuButton4: !<MappingBased.Interactable> 968014bb-a921-411a-9c49-b5c316a31631
       mainMenuButton5: !<MappingBased.Interactable> 0cc925c8-f304-402c-b367-f9d0e6c54285
-      mainMenuButton6: !<MappingBased.Interactable> 54b87cf1-e7c3-47d5-9538-616e00ece626
+      mainMenuButton6: !<MappingBased.Interactable> 00000000-0000-0000-0000-000000000000
       menu1: !<reference.SceneObject> ab76491e-59bb-47f2-a85e-7efd3217a28f
       menu2: !<reference.SceneObject> aab1eb2b-af7f-48d4-8498-74d25539d93a
       menu3: !<reference.SceneObject> ba8bf247-93c0-4a2e-92ea-43f0387ed8ce
       menu4: !<reference.SceneObject> caf23cb2-3655-4c4d-aed3-71bfb951960e
       menu5: !<reference.SceneObject> caf23cb2-3655-4c4d-aed3-71bfb951960e
-      menu6: !<reference.SceneObject> 046bd2aa-d9d6-4ccd-8640-0953ede00b6d
+      menu6: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingressManager: !<MappingBased.Ingress> b7927b5b-23d1-495e-8596-81d2c536daf9
   ScriptTypes:
     "":
