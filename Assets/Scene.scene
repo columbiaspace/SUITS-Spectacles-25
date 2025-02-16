@@ -295,9 +295,9 @@
     right: 0.000000
     top: 1.000000
   Offset:
-    left: -225.000000
-    bottom: -450.000000
-    right: 225.000000
+    left: -1200.000000
+    bottom: -1000.000000
+    right: 1200.000000
     top: 0.000000
 - !<SceneObject/02428a5f-df07-471f-9dae-b6a2d542a5ef>
   PrefabRemaps:
@@ -10889,7 +10889,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 10
+  RenderOrder: 17
   StretchMode: Fit
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -13472,7 +13472,7 @@
   PrefabRemaps:
     []
   Name: Full Frame Region
-  Enabled: true
+  Enabled: false
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -16283,6 +16283,56 @@
     - !<own> 55686113-9e92-431d-9df0-55e3a1c042a6
   Components:
     - !<own> 4b47f972-599a-4965-8ccc-68f1bbdcf666
+- !<ScriptComponent/5d1d031f-8299-45cb-8874-c6d9c3e0c99c>
+  PrefabRemaps:
+    []
+  Name: Map
+  Enabled: true
+  ScriptAsset: !<reference> 659a44d1-654b-441b-85d0-d826e3c6c2ab
+  ScriptInputsDefault:
+    componentPrefab: true
+    useOutlineTexture: true
+    mapOutlineTexture: true
+    showUserPin: true
+    userPinVisual: true
+    userPinScale: true
+    userPinRotated: true
+    mapPinPrefab: true
+    mapPinsRotated: true
+    enableScrolling: true
+    setMapToCustomLocation: true
+    longitude: true
+    latitude: true
+    rotation: true
+    mapRotated: true
+    mapRotationSmoothing: true
+    mapUpdateThreshold: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      componentPrefab: !<reference.ObjectPrefab> 28051d46-9be9-4234-933b-cb90bad04876
+      maskTexture: !<reference.Texture> 50e363f2-07a5-4060-b994-ee52d89ef15b
+      useOutlineTexture: true
+      mapOutlineTexture: !<reference.Texture> 6844e925-e163-4fa6-a5c9-bd30699a82a6
+      mapZoomLevel: !<float> 15.000000
+      showUserPin: true
+      userPinVisual: !<reference.ObjectPrefab> 595354e2-495b-4054-acdc-1ee116fd1147
+      userPinScale: !<Vec2> {x: 1.000000, y: 1.000000}
+      userPinRotated: true
+      mapPinPrefab: !<reference.ObjectPrefab> fc18f04a-99f6-4608-a33f-a6ce4936aec6
+      mapPinsRotated: true
+      enableScrolling: false
+      setMapToCustomLocation: false
+      longitude: ""
+      latitude: ""
+      rotation: !<float> 0.000000
+      mapRotated: true
+      mapRotationSmoothing: true
+      mapUpdateThreshold: 0.100000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/5d1ebe34-4748-49b7-b6d3-7bad94ca7426>
   PrefabRemaps:
     []
@@ -24478,6 +24528,22 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/8e3cebd4-2448-469d-992c-54c92039ea4d>
+  PrefabRemaps:
+    []
+  Name: NavMap
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f84c7723-8c17-4233-8ede-e040b1c3aace
+    - !<own> 5d1d031f-8299-45cb-8874-c6d9c3e0c99c
 - !<SceneObject/8e8470af-1ad4-4317-96d6-2bd90d653cbb>
   PrefabRemaps:
     []
@@ -25092,9 +25158,8 @@
   ScriptAsset: !<reference> 659a44d1-654b-441b-85d0-d826e3c6c2ab
   ScriptInputsDefault:
     componentPrefab: true
-    maskTexture: true
+    useOutlineTexture: true
     mapOutlineTexture: true
-    mapZoomLevel: true
     showUserPin: true
     userPinVisual: true
     userPinScale: true
@@ -25114,10 +25179,10 @@
   ScriptInputs:
     "":
       componentPrefab: !<reference.ObjectPrefab> 28051d46-9be9-4234-933b-cb90bad04876
-      maskTexture: !<reference.Texture> 6d3da423-7069-4531-845f-2a465c9f9300
-      useOutlineTexture: false
+      maskTexture: !<reference.Texture> 50e363f2-07a5-4060-b994-ee52d89ef15b
+      useOutlineTexture: true
       mapOutlineTexture: !<reference.Texture> 6844e925-e163-4fa6-a5c9-bd30699a82a6
-      mapZoomLevel: !<float> 18.000000
+      mapZoomLevel: !<float> 15.000000
       showUserPin: true
       userPinVisual: !<reference.ObjectPrefab> 595354e2-495b-4054-acdc-1ee116fd1147
       userPinScale: !<Vec2> {x: 1.000000, y: 1.000000}
@@ -28731,6 +28796,7 @@
     - !<own> 78136785-6fb2-4c91-811b-ea51683aa88e
     - !<own> b270cb05-2369-45a8-82e2-05e27a6737da
     - !<own> 898faacc-7c54-45cb-a798-e1158826a6b1
+    - !<own> f80b683b-0175-4de5-b3e5-4ecaa20522f1
   Components:
     - !<own> 52c64ba1-207a-4e32-8ccc-cd6f1fa6a833
 - !<SceneObject/aaf39e7b-f038-438b-a617-30519acf6fe9>
@@ -29559,9 +29625,9 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: 0.000000, y: 3.221045, z: 0.000000}
-    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
-    scale: {x: 30.000000, y: 30.000000, z: 30.000000}
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 30.000000, y: 20.000000, z: 20.000000}
     hasSegmentScaleCompensation: false
   Children:
     []
@@ -32417,7 +32483,7 @@
   PrefabRemaps:
     []
   Name: NavMap
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -33708,6 +33774,13 @@
     - !<own> 20841b1c-e2a6-42cf-9bd0-4fd466eae39c
   Components:
     []
+- !<ScreenRegionComponent/d1ae6100-75b6-4cce-aaa1-64a270d0d679>
+  PrefabRemaps:
+    []
+  Name: Screen Region
+  Enabled: true
+  ScreenRegionType: FullFrame
+  ResizeWithKeyboard: false
 - !<SceneObject/d20bb6a2-4e38-491e-ba31-7889c6a6016d>
   PrefabRemaps:
     []
@@ -37341,6 +37414,39 @@
   Components:
     - !<own> 2e3b1982-7354-4217-aab4-fde567cd730a
     - !<own> 0796bfa7-1a3c-43e0-832b-695df6999b8d
+- !<ScreenTransform/eddfff09-b0e7-427b-a29e-8597bcf42eb4>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<ScreenTransform/ee02bda4-457d-4b91-9243-32cf461a5f92>
   PrefabRemaps:
     []
@@ -39820,6 +39926,55 @@
     []
   Components:
     - !<own> 20ce429e-ff7b-42d7-8363-322863bfded1
+- !<SceneObject/f80b683b-0175-4de5-b3e5-4ecaa20522f1>
+  PrefabRemaps:
+    []
+  Name: Full Frame Region
+  Enabled: true
+  Layers: 1048576
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 8e3cebd4-2448-469d-992c-54c92039ea4d
+  Components:
+    - !<own> eddfff09-b0e7-427b-a29e-8597bcf42eb4
+    - !<own> d1ae6100-75b6-4cce-aaa1-64a270d0d679
+- !<ScreenTransform/f84c7723-8c17-4233-8ede-e040b1c3aace>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: true
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: true
+    fixedHeight: true
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: 0.000000
+    bottom: 1.000000
+    right: 0.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: -500.000000
+    right: 0.000000
+    top: -500.000000
 - !<RenderMeshVisual/f88c4416-030a-4c61-8d02-a9a5774132e6>
   PrefabRemaps:
     []
