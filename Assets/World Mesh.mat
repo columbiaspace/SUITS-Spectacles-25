@@ -1,4 +1,88 @@
 - !<Material/eca69ade-4405-4eac-9969-79aa96265b1d>
   PackagePath: ""
   PassesInfo:
+    - !<own> fe84c028-cc3f-4aba-ba6f-a44f46aeb2c1
+- !<PassInfo/fe84c028-cc3f-4aba-ba6f-a44f46aeb2c1>
+  CachedProperties:
     []
+  DepthWrite: true
+  DepthTest: true
+  DepthFunction: LessEqual
+  TwoSided: false
+  ColorMask: {x: true, y: true, z: true, w: true}
+  CullMode: Back
+  PolygonOffset: {x: 0.000000, y: 0.000000}
+  FrustumCulling: Auto
+  FrustumCullPad: 0.000000
+  InstanceCount: 1
+  Defines:
+    []
+  BlendMode: Disabled
+  Properties:
+    Port_Input0_N062:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N000:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N003:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N010:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N017:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N019:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N029:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N049:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N055:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N056:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N059:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N061:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input2_N049:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input2_N061:
+      typeIdx: 1
+      value: 0.000000
+    Port_Multiplier_N022:
+      typeIdx: 1
+      value: 0.000000
+    Port_Scale_N013:
+      typeIdx: 3
+      value: {x: 1.000000, y: 1.000000}
+    Port_Scale_N015:
+      typeIdx: 3
+      value: {x: 1.000000, y: 1.000000}
+    Port_Scale_N020:
+      typeIdx: 3
+      value: {x: 1.000000, y: 1.000000}
+    Port_Value_N023:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    PreviewEnabled:
+      typeIdx: 0
+      value: 0
+    overrideTimeElapsed:
+      typeIdx: 1
+      value: 0.000000
+    overrideTimeEnabled:
+      typeIdx: 0
+      value: 0
+  Pass: !<reference> 75791f2c-6e2f-433f-823f-bf836888ce1e

@@ -10791,7 +10791,7 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: -10.271736, y: -10.000000, z: 0.000000}
+    position: {x: -10.271736, y: -15.000000, z: 0.000000}
     rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
     scale: {x: 1.250000, y: 1.250000, z: 1.250000}
     hasSegmentScaleCompensation: false
@@ -10889,8 +10889,8 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 17
-  StretchMode: Fit
+  RenderOrder: 20
+  StretchMode: FillAndCut
   VerticalAlignment: Center
   HorizontalAlignment: Center
   MeshShadowMode: None
@@ -21427,7 +21427,7 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: 11.052620, y: -10.000000, z: 0.000000}
+    position: {x: 11.052620, y: -15.000000, z: 0.000000}
     rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
     scale: {x: 1.250000, y: 1.250000, z: 1.250000}
     hasSegmentScaleCompensation: false
@@ -25160,16 +25160,11 @@
     componentPrefab: true
     useOutlineTexture: true
     mapOutlineTexture: true
-    showUserPin: true
     userPinVisual: true
     userPinScale: true
-    userPinRotated: true
     mapPinPrefab: true
     mapPinsRotated: true
     enableScrolling: true
-    setMapToCustomLocation: true
-    longitude: true
-    latitude: true
     rotation: true
     mapRotated: true
     mapRotationSmoothing: true
@@ -25183,16 +25178,16 @@
       useOutlineTexture: true
       mapOutlineTexture: !<reference.Texture> 6844e925-e163-4fa6-a5c9-bd30699a82a6
       mapZoomLevel: !<float> 15.000000
-      showUserPin: true
+      showUserPin: false
       userPinVisual: !<reference.ObjectPrefab> 595354e2-495b-4054-acdc-1ee116fd1147
       userPinScale: !<Vec2> {x: 1.000000, y: 1.000000}
-      userPinRotated: true
+      userPinRotated: false
       mapPinPrefab: !<reference.ObjectPrefab> fc18f04a-99f6-4608-a33f-a6ce4936aec6
       mapPinsRotated: true
       enableScrolling: false
-      setMapToCustomLocation: false
-      longitude: ""
-      latitude: ""
+      setMapToCustomLocation: true
+      longitude: !<string> 29.565
+      latitude: !<string> -95.081
       rotation: !<float> 0.000000
       mapRotated: true
       mapRotationSmoothing: true
